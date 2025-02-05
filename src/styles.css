@@ -1,0 +1,99 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* outline: 2px solid red; */
+  /* color schme is slate from tailwind css */
+  color-scheme: light dark;
+  --light-bg: #f8fafc;
+  --light-color: #62748e;
+  --light-text-color: #000;
+  --light-border-color: #020618;
+
+  --dark-bg: #020618;
+  --dark-color: #62748e;
+  --dark-text-color: #fff;
+  --dark-border-color: #f8fafc;
+
+  --header-height: 10vh;
+  --footer-height: 5vh;
+  --page-content-height: calc(
+    100vh - var(--header-height) - var(--footer-height)
+  );
+  font-family: Arial, sans-serif;
+  background-color: #eeeeee;
+}
+
+* {
+  background-color: light-dark(var(--light-bg), var(--dark-bg));
+  color: light-dark(var(--light-text-color), var(--dark-text-color));
+}
+
+header {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  height: var(--header-height);
+  background-color: light-dark(var(--light-bg), var(--dark-bg));
+  border-bottom: 1px solid #ccc;
+  padding: 2rem;
+}
+
+.page-content {
+  display: flex;
+  flex-direction: row;
+  height: var(--page-content-height);
+  background-color: light-dark(var(--light-bg), var(--dark-bg));
+}
+
+aside {
+  /* outline: 2px solid white; */
+  border-right: 2px solid
+    light-dark(var(--light-border-color), var(--dark-border-color));
+  height: var(--page-content-height);
+  width: 40vh;
+  padding: 1rem;
+}
+
+aside li {
+  list-style: none;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  /* background-color: #f0f0f0; */
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.project-title-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+button#add-project-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: light-dark(var(--light-bg), var(--dark-bg));
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: var(--footer-height);
+  background-color: light-dark(var(--light-bg), var(--dark-bg));
+  /* border: 2px solid greenyellow; */
+}
